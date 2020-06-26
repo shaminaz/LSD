@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+	<HTML lang="en">
+		<head>
+			<style>
+				.div1{
+					position:absolute;
+					background:rgba(0,0,0,0.75);
+					top:300px;
+					left:400px;
+					text-color:#fff;
+					color:#fff;
+				    }
+				    .div2{
+        				    position:absolute;
+        				    top:500px;
+        				    left:350p;
+        				    }
+			
+				form input:focus 
+				{ 
+					background-color: rgba(254,254,254,.4); 
+				}
+				h1{
+    				color:#fff;
+    				}
+
+			</style>
+			 <title>LIVER DISEASE PREDICTION</title>
+			
+		</head>
+		<body bgcolor="#98AFC7">
+			<form action="{{url_for('predict')}}" method="post">
+				<center><br><br><h1>LIVER DISEASE PREDICTION</h1></center>
+				<div class="div1">
+					<table border=0 cellspacing="10">
+						<tr>
+							<td><label>Age:</label></td><td><input type="text"  name="age" onkeypress="return(event.charCode >= 48 && event.charCode<58 )" required></td>
+										
+							<td><label>Gender:</label></td>
+							<td><input type="text"  name="gender" onkeypress="return(event.charCode >= 48 && event.charCode<58 )" autocomplete="off" required ></td>
+										
+							
+							<!--<td><select name:"gender">-->
+									<!--<option selected>--select--</option>-->
+								<!--	<option name="0">Male</option>-->
+									<!--<option name="1">Female</option>-->
+							  <!--</select><td>-->
+						</tr>
+		
+						<tr>
+							<td><label>Total Bilirubin:</label></td><td><input type="text"  name="tb"  onkeypress="return(event.charCode >= 48 && event.charCode<58)"required></td>
+							<td><label>Direct Bilirubin:</label></td><td><input type="text"  name="db" onkeypress="return(event.charCode >= 48 && event.charCode<58)" required></td>
+ 					
+						</tr>
+						<tr>
+							<td><label>Alkaline phosphotase:</label></td><td><input type="text"  name="ap" onkeypress="return(event.charCode >= 48 && event.charCode<58)" required></td>
+ 							<td><label>Alamine Aminotransferase:</label></td><td><input type="text"  name="ala" onkeypress="return(event.charCode >= 48 && event.charCode<58)" required></td>
+ 						</tr>
+						<tr>
+							<td><label>Aspartate Aminotransferase:</label></td><td><input type="text"  name="asa" onkeypress="return(event.charCode >= 48 && event.charCode<58 )" required></td>
+							<td><label>Total Protiens:</label></td><td><input type="text"  name="tp" onkeypress="return(event.charCode >= 48 && event.charCode<58)" required></td>
+ 						</tr>
+						<tr>
+							<td><label>Albumin:</label></td><td><input type="text"  name="a" onkeypress="return(event.charCode >= 48 && event.charCode<58)" required></td>
+							<td><label>Albumin and Globulin:</label></td><td><input type="text"  name="aag" onkeypress="return(event.charCode >= 48 && event.charCode<58)" required></td>
+						</tr>
+						<tr>
+							<td colspan="2"><center><input type="submit" value="Submit"></center></td>
+							 <td colspan="2"><center><input type="reset" value="Clear" ></center></td>
+						</tr>	
+					</table>
+				</div>
+					<p id="v"></p>
+				<br><br>
+				<div align="center">
+				<B><h2 style="color:#4B4B4C;">{{ prediction_text }}</h2></B>
+				<B><h2 style="color:#4B4B4C;">{{ prediction_text1 }}</h2></B>
+				</div>
+			</form>
+		</body>
+	</HTML>
